@@ -23,6 +23,6 @@ export default {
 		['themes/Ultra/addons/_banners.scss', 'dist/Ultra/Banners.css'],
 		['themes/Ultra/addons/_betterInvites.scss', 'dist/Ultra/BetterInvites.css'],
 		['themes/Ultra/addons/_touchup.scss', 'dist/Ultra/TouchUp.css'],
-        ['themes/ultra/addons/_userBadges.scss', 'dist/Ultra/UserBadges.css'],
+        ['themes/Ultra/addons/_userBadges.scss', 'dist/Ultra/UserBadges.css'],
 	]
 };
