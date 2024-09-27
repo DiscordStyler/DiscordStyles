@@ -5,8 +5,12 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "tsc && node lib/index.js build ClearVision && node lib/index.js build Ultra",
-    "build.catppuccin_mocha": "node lib/index.js build CatppuccinMocha",
+    "build:dev": "nrr compile && nrr build:catppuccin_mocha && nrr build:clear_vision && nrr build:ultra",
+    "build": "pnpm compile && pnpm build:catppuccin_mocha && pnpm build:clear_vision && pnpm build:ultra",
+    "build:catppuccin_mocha": "node lib/index.js build CatppuccinMocha",
+    "build:clear_vision": "node lib/index.js build ClearVision",
+    "build:ultra": "node lib/index.js build Ultra",
+    "compile": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
