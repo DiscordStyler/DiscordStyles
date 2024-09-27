@@ -14,7 +14,6 @@ body {
 
 %bg {
     background: functions.cv('bg.app.img') functions.cv('bg.app.pos') / functions.cv('bg.app.size') functions.cv('bg.app.repeat') functions.cv('bg.app.attach');
-    @debug functions.cv('bg.app');
     @include filters(functions.cv('bg.app'));
     z-index: -9999;
 }
