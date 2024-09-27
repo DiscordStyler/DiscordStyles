@@ -1,0 +1,8 @@
+// CLEARVISION VARIABLES
+@use 'functions';
+
+// SHORTHANDS
+$main-color: functions.cv('colors.main');
+$hover-color: functions.cv('colors.hover');
+// $main-color: var(--main-color);
+// $hover-color: var(--hover-color);

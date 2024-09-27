@@ -1,0 +1,10 @@
+@use '../functions';
+
+%themeDark {
+  %everyoneWarningPopout {
+    background-color: functions.cv('bg.general.popout');
+  }
+  %everyoneWarningFooter {
+    background-color: transparent;
+  }
+}

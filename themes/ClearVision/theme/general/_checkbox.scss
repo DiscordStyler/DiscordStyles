@@ -1,0 +1,17 @@
+/* CHECKBOX */
+
+@use '../variables' as *;
+
+
+%themeDark %checkbox {
+  border-color: hsla(0, 0%, 100%, 0.5);
+  &%checkboxChecked {
+    background-color: transparent !important;
+    border-color: $main-color !important;
+    > svg {
+      > path {
+        fill: #fff;
+      }
+    }
+  }
+}

@@ -1,0 +1,14 @@
+//Voice Channel listening to or playing x game
+
+@use '../variables' as *;
+@use '../functions';
+
+%voiceChannelListening {
+  background: functions.cv('bg.general.popout');
+}
+%voiceChannelListeningIcon {
+  background: $main-color;
+  > svg {
+    color: #fff;
+  }
+}

@@ -1,0 +1,17 @@
+/* CONNECTION INFO POPOUT */
+
+@use '../variables' as *;
+@use '../functions';
+
+%connectionDebugPopout {
+  background-color: functions.cv('bg.general.popout');
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+%connectionDebugText {
+  > strong {
+    color: $main-color;
+  }
+  &%connectionDebugTextDetails {
+    color: hsla(0, 0%, 100%, 0.5);
+  }
+}

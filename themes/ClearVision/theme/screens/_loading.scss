@@ -1,0 +1,13 @@
+/* LOADING SCREEN */
+
+@use '../variables' as *;
+@use '../mixins' as *;
+
+%loadingScreen {
+  background: rgba(0, 0, 0, 0.9);
+}
+%loadingLinks {
+  color: $main-color;
+  opacity: 1 !important;
+  @include hover-shadow;
+}
