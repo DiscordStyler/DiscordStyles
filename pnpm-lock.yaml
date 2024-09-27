@@ -24,6 +24,12 @@ importers:
         specifier: ^1.79.3
         version: 1.79.3
     devDependencies:
+      '@catppuccin/highlightjs':
+        specifier: ^1.0.0
+        version: 1.0.0
+      '@catppuccin/palette':
+        specifier: ^1.4.0
+        version: 1.4.0
       '@types/node':
         specifier: ^22.7.3
         version: 22.7.3
@@ -35,6 +41,12 @@ importers:
         version: 5.6.2
 
 packages:
+
+  '@catppuccin/highlightjs@1.0.0':
+    resolution: {integrity: sha512-Cq0b5pNkzAxTf7QwXkGcMnfEawOdaJP9wQJNsLO1PCqml+NgMe7mOknH3l/j/0Q3bgjijm+N26B8BAYiv18oQg==}
+
+  '@catppuccin/palette@1.4.0':
+    resolution: {integrity: sha512-Npdg/QFeMAEbRVlnJqc1xE3i7NI4liSq4tTTXk4U/L3vPEiqw3bZQJRLYjuP0Vq2AEDNS5H5Li+lk27c38sP4g==}
 
   '@esbuild/aix-ppc64@0.23.1':
     resolution: {integrity: sha512-6VhYk1diRqrhBAqpJEdjASR/+WVRtfjpqKuNw11cLiaWpAT/Uu+nokB+UJnevzy/P9C/ty6AOe0dwueMrGh/iQ==}
@@ -298,6 +310,10 @@ packages:
       browserslist: '>= 4.21.0'
 
 snapshots:
+
+  '@catppuccin/highlightjs@1.0.0': {}
+
+  '@catppuccin/palette@1.4.0': {}
 
   '@esbuild/aix-ppc64@0.23.1':
     optional: true
