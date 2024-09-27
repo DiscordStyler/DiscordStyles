@@ -1,0 +1,23 @@
+/**
+ * @name Catppuccin Mocha
+ * @author jw0902
+ * @version 0.1.0
+ * @description 🎮 Soothing pastel theme for Discord
+ * @source https://github.com/DiscordStyler/DiscordStyles
+*/
+
+@import url('https://discordstyler.github.io/DiscordStyles/CatppuccinMocha/CatppuccinMocha.css');
+
+/* https://highlightjs.readthedocs.io/en/latest/css-classes-reference.html */
+.theme-dark .hljs-emphasis {
+  font-style: italic;
+}
+.theme-dark .hljs-strong {
+  font-weight: bold;
+}
+.theme-dark .hljs-link {
+  font-style: italic;
+}
+.theme-dark .hljs-quote {
+  font-style: italic;
+}
