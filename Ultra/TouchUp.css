@@ -1,0 +1,40 @@
+/* Made by 0xJWLabs */
+/* #2c2e33 */
+#app-mount .background-fkKrXt,
+#app-mount .container-3wLKDe,
+#app-mount .container-2cd8Mz,
+#app-mount .perksModal-CLcR1c,
+#app-mount .pageWrapper-2PwDoS,
+#app-mount .tierMarkerBackground-G8FoN4 {
+  background-color: var(--background-primary);
+}
+#app-mount .tierBody-3ju-rc {
+  background-color: var(--background-tertiary);
+}
+#app-mount .tierHeaderLocked-3ItHYn {
+  background-color: var(--background-floating);
+}
+#app-mount .autocomplete-3NRXG8 {
+  background-color: var(--background-nested-floating);
+}
+
+/* #36393f */
+/* #202225 */
+/* #18191c */
+/* #2f3136 */
+.categoryHeader-OpJ1Ly {
+  background-color: var(--background-nested-floating);
+}
+
+#app-mount .perk-19D_HN {
+  background-color: var(--background-nested-floating);
+}
+#app-mount .headerBarInner-2pcZSM:after {
+  background: linear-gradient(90deg, rgba(54, 57, 63, 0) 0, var(--background-primary));
+}
+#app-mount .option-ayUoaq:after {
+  background: linear-gradient(90deg, rgba(54, 57, 63, 0) 0, var(--background-floating));
+}
+#app-mount .option-ayUoaq:hover:after {
+  background: linear-gradient(90deg, rgba(54, 57, 63, 0) 0, var(--background-primary));
+}
