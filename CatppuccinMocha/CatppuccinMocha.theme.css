@@ -8,6 +8,8 @@
 
 @import url('https://discordstyler.github.io/DiscordStyles/CatppuccinMocha/CatppuccinMocha.css');
 
+/* Optional */
+@import url("https://discordstyler.github.io/DiscordStyles/CatppuccinMocha/Unrounding.css");
 /* https://highlightjs.readthedocs.io/en/latest/css-classes-reference.html */
 .theme-dark .hljs-emphasis {
   font-style: italic;
