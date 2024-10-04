@@ -16,9 +16,9 @@ html {
   --panel-roundness: 0px;
 
   --bg-0: #{$base};
-  --bg-1: #{color.adjust($base, $lightness: -4%, $space: oklch)};
-  --bg-2: #{color.adjust($base, $lightness: -8%, $space: oklch)};
-  --bg-3: #{color.adjust($base, $lightness: -12%, $space: oklch)};
+  --bg-1: #{color.to-space(color.adjust($base, $lightness: -4%, $space: oklch), oklch)};
+  --bg-2: #{color.to-space(color.adjust($base, $lightness: -8%, $space: oklch), oklch)};
+  --bg-3: #{color.to-space(color.adjust($base, $lightness: -12%, $space: oklch), oklch)};
 
   --hover: oklch(54.29% 0.03 283.91 / 0.1);
   --active: oklch(54.29% 0.03 283.91 / 0.2);
@@ -27,9 +27,9 @@ html {
   --txt-dark: var(--bg-0);
   --txt-link: var(--cyan);
   --txt-0: #{$text};
-  --txt-1: #{color.adjust($text, $lightness: -10%)};
-  --txt-2: #{color.adjust($text, $lightness: -25%)};
-  --txt-3: #{color.adjust($text, $lightness: -40%)};
+  --txt-1: #{color.adjust(color.to-space($text, oklch), $lightness: - math.div(20%, 2), $space: oklch)};
+  --txt-2: #{color.adjust(color.to-space($text, oklch), $lightness: - math.div(35%, 2), $space: oklch)};
+  --txt-3: #{color.adjust(color.to-space($text, oklch), $lightness: - math.div(50%, 2), $space: oklch)};
 
   --acc-0: var(--blue);
   --acc-1: var(--blue-1);
