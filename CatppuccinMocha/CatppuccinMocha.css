@@ -253,9 +253,9 @@ html {
   --txt-pad: 10px;
   --panel-roundness: 0px;
   --bg-0: #1e1e2e;
-  --bg-1: oklch(20.2866940358% 0.0303573539 283.9109734051deg);
-  --bg-2: oklch(16.2866940358% 0.0303573539 283.9109734051deg);
-  --bg-3: oklch(12.2866940358% 0.0303573539 283.9109734051deg);
+  --bg-1: oklch(28.2866940358% 0.0303573539 283.9109734051deg);
+  --bg-2: oklch(32.2866940358% 0.0303573539 283.9109734051deg);
+  --bg-3: oklch(36.2866940358% 0.0303573539 283.9109734051deg);
   --hover: oklch(54.29% 0.03 283.91 / 0.1);
   --active: oklch(54.29% 0.03 283.91 / 0.2);
   --selected: var(--active);
@@ -277,9 +277,9 @@ html {
   --idle-dot: var(--yellow);
   --streaming-dot: var(--blue);
   --mention-txt: #89b4fa;
-  --mention-bg: rgba(137, 180, 250, 0.9);
-  --mention-overlay: rgba(137, 180, 250, 0.9);
-  --mention-hover-overlay: rgba(137, 180, 250, 0.95);
+  --mention-bg: rgba(137, 180, 250, 0.1);
+  --mention-overlay: rgba(137, 180, 250, 0.1);
+  --mention-hover-overlay: rgba(137, 180, 250, 0.05);
   --reply-overlay: var(--active);
   --reply-hover-overlay: var(--hover);
   --pink: #f5c2e7;
