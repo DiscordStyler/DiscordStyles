@@ -16,9 +16,9 @@ html {
   --panel-roundness: 0px;
 
   --bg-0: #{$base};
-  --bg-1: #{color.to-space(color.adjust($base, $lightness: -4%, $space: oklch), oklch)};
-  --bg-2: #{color.to-space(color.adjust($base, $lightness: -8%, $space: oklch), oklch)};
-  --bg-3: #{color.to-space(color.adjust($base, $lightness: -12%, $space: oklch), oklch)};
+  --bg-1: #{color.to-space(color.adjust($base, $lightness: 4%, $space: oklch), oklch)};
+  --bg-2: #{color.to-space(color.adjust($base, $lightness: 8%, $space: oklch), oklch)};
+  --bg-3: #{color.to-space(color.adjust($base, $lightness: 12%, $space: oklch), oklch)};
 
   --hover: oklch(54.29% 0.03 283.91 / 0.1);
   --active: oklch(54.29% 0.03 283.91 / 0.2);
@@ -44,11 +44,10 @@ html {
   --dnd-dot: var(--pink);
   --idle-dot: var(--yellow);
   --streaming-dot: var(--blue);
-
   --mention-txt: #{$brand};
-  --mention-bg: #{color.mix($brand, $transparent-color, $weight: 90%, $method: oklch)};
-  --mention-overlay: #{color.mix($brand, $transparent-color, $weight: 90%, $method: oklch)};
-  --mention-hover-overlay: #{color.mix($brand, $transparent-color, $weight: 95%, $method: oklch)};
+  --mention-bg: #{color.mix($brand, $transparent-color, $weight: 10%, $method: oklch)};
+  --mention-overlay: #{color.mix($brand, $transparent-color, $weight: 10%, $method: oklch)};
+  --mention-hover-overlay: #{color.mix($brand, $transparent-color, $weight: 5%, $method: oklch)};
 
   --reply-overlay: var(--active);
   --reply-hover-overlay: var(--hover);
