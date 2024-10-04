@@ -20,6 +20,6 @@ export default {
     // },
 	baseImport: 'https://discordstyler.github.io/DiscordStyles/CatppuccinMocha/CatppuccinMocha.css',
 	addons: [
-		['themes/CatppuccinMocha/addons/_unrounding.scss', 'dist/CAtppuccinMocha/Unrounding.css'],
+		['themes/CatppuccinMocha/addons/_unrounding.scss', 'dist/CatppuccinMocha/Unrounding.css'],
 	]
 };
