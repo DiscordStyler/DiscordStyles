@@ -248,15 +248,63 @@ div[class^=layerContainer] button[class^=backButton][class*=lookBlank] {
 
 [data-popout-root],
 html {
+  --corner-text: "catppuccino";
+  --pad: 16px;
+  --txt-pad: 10px;
+  --panel-roundness: 0px;
+  --bg-0: #1e1e2e;
+  --bg-1: rgb(20.9100762974, 20.7239554001, 36.048117635);
+  --bg-2: rgb(12.3094200668, 11.8561317848, 26.4294673836);
+  --bg-3: rgb(5.2291102273, 4.6417103749, 17.1766095636);
+  --hover: oklch(54.29% 0.03 283.91 / 0.1);
+  --active: oklch(54.29% 0.03 283.91 / 0.2);
+  --selected: var(--active);
+  --txt-dark: var(--bg-0);
+  --txt-link: var(--cyan);
+  --txt-0: #cdd6f4;
+  --txt-1: rgb(163.1967213115, 179.7213114754, 234.8032786885);
+  --txt-2: rgb(100.4918032787, 128.3032786885, 221.0081967213);
+  --txt-3: rgb(44.1803278689, 80.3278688525, 200.8196721311);
+  --acc-0: var(--blue);
+  --acc-1: var(--blue-1);
+  --acc-2: var(--blue-2);
+  --border-width: 2px;
+  --border-color: var(--bg-3);
+  --border-hover-color: var(--acc-0);
+  --border-transition: 0.1s linear;
+  --online-dot: var(--green);
+  --dnd-dot: var(--pink);
+  --idle-dot: var(--yellow);
+  --streaming-dot: var(--blue);
+  --mention-txt: #89b4fa;
+  --mention-bg: rgba(137, 180, 250, 0.9);
+  --mention-overlay: rgba(137, 180, 250, 0.9);
+  --mention-hover-overlay: rgba(137, 180, 250, 0.95);
+  --reply-overlay: var(--active);
+  --reply-hover-overlay: var(--hover);
+  --pink: #f5c2e7;
+  --pink-1: rgb(211.7292888921, 162.3573036002, 198.3835292537);
+  --pink-2: rgb(179.3345110166, 131.7447371338, 166.7240868998);
+  --purple: #cba6f7;
+  --purple-1: rgb(171.3106940506, 134.9128052415, 213.4705959911);
+  --purple-2: rgb(140.6833883914, 104.8183410884, 180.7820268875);
+  --blue: #89b4fa;
+  --blue-1: rgb(107.016598047, 148.4993184398, 216.2852328809);
+  --blue-2: rgb(78.1499615746, 117.9850989214, 183.3896438732);
+  --yellow: #f9e2af;
+  --cyan: #89dceb;
+  --green: #a6e3a1;
+  --green-1: rgb(134.6547267172, 194.3138953613, 130.0133256452);
+  --green-2: rgb(104.2078356439, 162.5620938605, 100.0063455389);
   --brand-experiment: #89b4fa;
-  --brand-experiment-100: white;
-  --brand-experiment-130: white;
-  --brand-experiment-160: white;
-  --brand-experiment-200: white;
-  --brand-experiment-230: white;
-  --brand-experiment-260: white;
-  --brand-experiment-300: white;
-  --brand-experiment-330: white;
+  --brand-experiment-100: hsl(217.1681415929, 91.8699186992%, 120.8823529412%);
+  --brand-experiment-130: hsl(217.1681415929, 91.8699186992%, 118.3823529412%);
+  --brand-experiment-160: hsl(217.1681415929, 91.8699186992%, 115.8823529412%);
+  --brand-experiment-200: hsl(217.1681415929, 91.8699186992%, 113.3823529412%);
+  --brand-experiment-230: hsl(217.1681415929, 91.8699186992%, 110.8823529412%);
+  --brand-experiment-260: hsl(217.1681415929, 91.8699186992%, 108.3823529412%);
+  --brand-experiment-300: hsl(217.1681415929, 91.8699186992%, 105.8823529412%);
+  --brand-experiment-330: hsl(217.1681415929, 91.8699186992%, 100.8823529412%);
   --brand-experiment-360: rgb(234.8536585366, 242.1951219512, 254.1463414634);
   --brand-experiment-400: rgb(210.3902439024, 226.6463414634, 253.1097560976);
   --brand-experiment-430: rgb(185.9268292683, 211.0975609756, 252.0731707317);
@@ -406,7 +454,7 @@ html {
   --button-outline-positive-background-hover: rgb(156.6987704918, 224.0737704918, 151.1762295082);
   --button-outline-positive-text-hover: #1e1e2e;
   --button-outline-positive-border-hover: rgb(156.6987704918, 224.0737704918, 151.1762295082);
-  --button-outline-positive-background-active: rgb(147.3975409836, 221.1475409836, 141.3524590164) ;
+  --button-outline-positive-background-active: rgb(147.3975409836, 221.1475409836, 141.3524590164);
   --button-outline-positive-text-active: #1e1e2e;
   --button-outline-positive-border-active: rgb(156.6987704918, 224.0737704918, 151.1762295082);
   --button-outline-brand-text: #cdd6f4;
@@ -421,10 +469,10 @@ html {
   --button-outline-primary-text: #cdd6f4;
   --button-outline-primary-border: #585b70;
   --button-outline-primary-background: transparent;
-  --button-outline-primary-background-hover: rgb(82.39, 85.19875, 104.86) ;
+  --button-outline-primary-background-hover: rgb(82.39, 85.19875, 104.86);
   --button-outline-primary-text-hover: #1e1e2e;
   --button-outline-primary-border-hover: rgb(82.39, 85.19875, 104.86);
-  --button-outline-primary-background-active: rgb(76.78, 79.3975, 97.72) ;
+  --button-outline-primary-background-active: rgb(76.78, 79.3975, 97.72);
   --button-outline-primary-text-active: #1e1e2e;
   --button-outline-primary-border-active: rgb(82.39, 85.19875, 104.86);
   --modal-background: #1e1e2e;
@@ -464,7 +512,7 @@ html {
   --bg-mod-faint: #181825;
   --bg-mod-subtle: surface1;
   --deprecated-store-bg: #1e1e2e;
-  --deprecated-quickswitcher-input-background: rgb(76.78, 79.3975, 97.72) ;
+  --deprecated-quickswitcher-input-background: rgb(76.78, 79.3975, 97.72);
   --deprecated-quickswitcher-input-placeholder: rgba(17, 17, 27, 0.3) ;
   --deprecated-text-input-bg: #11111b;
   --deprecated-text-input-border: rgba(17, 17, 27, 0.3);
@@ -556,7 +604,7 @@ div[class^=contentRegion] #nitro-server-boost-tab button[class*=lookInverted_] {
   background-color: #cdd6f4;
 }
 div[class^=contentRegion] #nitro-server-boost-tab button[class*=lookInverted_]:hover {
-  background-color: rgb(207.0901639344, 215.7139344262, 244.4598360656);
+  background-color: hsl(226.1538461538, 63.9344262295%, 138.0392156863%);
 }
 div[class^=contentRegion] #nitro-server-boost-tab div[class*=card_],
 div[class^=contentRegion] #nitro-server-boost-tab h3[class*=price_] {
@@ -599,7 +647,7 @@ div[class^=contentRegion] #discord-nitro-tab button[class*=lookInverted_] {
   background-color: #cdd6f4;
 }
 div[class^=contentRegion] #discord-nitro-tab button[class*=lookInverted_]:hover {
-  background-color: rgb(207.0901639344, 215.7139344262, 244.4598360656);
+  background-color: hsl(226.1538461538, 63.9344262295%, 138.0392156863%);
 }
 div[class^=contentRegion] #billing-tab div[class*=subtext] {
   color: #bac2de;
