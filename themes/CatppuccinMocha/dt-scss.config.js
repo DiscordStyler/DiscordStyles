@@ -7,11 +7,11 @@ export default {
 		source: 'https://github.com/DiscordStyler/DiscordStyles',
 	},
 	base: {
-		target: "src/themes/CatppuccinMocha/base.scss",
+		target: "themes/CatppuccinMocha/base.scss",
 		output: 'dist/CatppuccinMocha'
 	},
     dist: {
-        target: "src/themes/CatppuccinMocha/dist.scss",
+        target: "themes/CatppuccinMocha/dist.scss",
         output: "dist/CatppuccinMocha",
     },
 	// dev: {
@@ -20,6 +20,6 @@ export default {
     // },
 	baseImport: 'https://discordstyler.github.io/DiscordStyles/CatppuccinMocha/CatppuccinMocha.css',
 	addons: [
-		['src/themes/CatppuccinMocha/addons/_unrounding.scss', 'dist/CatppuccinMocha/Unrounding.css'],
+		['themes/CatppuccinMocha/addons/_unrounding.scss', 'dist/CatppuccinMocha/Unrounding.css'],
 	]
 };

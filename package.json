@@ -6,9 +6,9 @@
   "type": "module",
   "scripts": {
     "build": "pnpm build:catppuccin_mocha && pnpm build:clear_vision && pnpm build:ultra",
-    "build:catppuccin_mocha": "dt-scss build CatppuccinMocha src/themes",
-    "build:clear_vision": "dt-scss build ClearVision src/themes",
-    "build:ultra": "dt-scss build Ultra src/themes",
+    "build:catppuccin_mocha": "dt-scss build CatppuccinMocha",
+    "build:clear_vision": "dt-scss build ClearVision",
+    "build:ultra": "dt-scss build Ultra",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
