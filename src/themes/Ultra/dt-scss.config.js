@@ -7,11 +7,11 @@ export default {
 		source: 'https://github.com/DiscordStyler/DiscordStyles',
 	},
 	base: {
-		target: "themes/Ultra/base.scss",
+		target: "src/themes/Ultra/base.scss",
 		output: 'dist/Ultra'
 	},
     dist: {
-        target: "themes/Ultra/dist.scss",
+        target: "src/themes/Ultra/dist.scss",
         output: "dist/Ultra",
     },
 	// dev: {
@@ -20,9 +20,9 @@ export default {
     // },
 	baseImport: 'https://discordstyler.github.io/DiscordStyles/Ultra/Ultra.css',
     addons: [
-		['themes/Ultra/addons/_banners.scss', 'dist/Ultra/Banners.css'],
-		['themes/Ultra/addons/_betterInvites.scss', 'dist/Ultra/BetterInvites.css'],
-		['themes/Ultra/addons/_touchup.scss', 'dist/Ultra/TouchUp.css'],
-        ['themes/Ultra/addons/_userBadges.scss', 'dist/Ultra/UserBadges.css'],
+		['src/themes/Ultra/addons/_banners.scss', 'dist/Ultra/Banners.css'],
+		['src/themes/Ultra/addons/_betterInvites.scss', 'dist/Ultra/BetterInvites.css'],
+		['src/themes/Ultra/addons/_touchup.scss', 'dist/Ultra/TouchUp.css'],
+        ['src/themes/Ultra/addons/_userBadges.scss', 'dist/Ultra/UserBadges.css'],
 	]
 };
