@@ -14,10 +14,10 @@ export default {
         target: "themes/Ultra/dist.scss",
         output: "dist/Ultra",
     },
-	dev: {
-        target: "themes/Ultra/dev.scss",
-        output: "dist/Ultra",
-    },
+	// dev: {
+    //     target: "themes/Ultra/dev.scss",
+    //     output: "dist/Ultra",
+    // },
 	baseImport: 'https://discordstyler.github.io/DiscordStyles/Ultra/Ultra.css',
     addons: [
 		['themes/Ultra/addons/_banners.scss', 'dist/Ultra/Banners.css'],

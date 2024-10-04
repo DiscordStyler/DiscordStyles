@@ -1,4 +1,5 @@
 @use "@catppuccin/palette/scss/mocha" as *;
+@use "sass:color";
 @use '../variables' as *;
 
 // settings
@@ -102,7 +103,7 @@ div[class^="contentRegion"] {
             background-color: $text;
 
             &:hover {
-                background-color: lighten($text, 0.5);
+                background-color: color.adjust($text, $lightness: 50%);
             }
         }
 
@@ -167,7 +168,7 @@ div[class^="contentRegion"] {
             background-color: $text;
 
             &:hover {
-                background-color: lighten($text, 0.5);
+                background-color: color.adjust($text, $lightness: 50%);
             }
         }
     }
@@ -525,7 +526,7 @@ div[class^="contentRegion"] {
         --switch-color: #{$green};
 
         svg.bd-switch-symbol path {
-            fill: darken($green, 40%);
+            fill: color.adjust($green, $lightness: -40%);
         }
     }
 }
@@ -609,7 +610,7 @@ div[class^="perksModal"] {
     }
 
     div[class^="tierHeaderLocked"] {
-        background-color: darken($crust, 5%);
+        background-color: color.adjust($crust, $lightness: -5%);
         color: var(--text-muted);
     }
 
@@ -745,7 +746,7 @@ div[class^="notice"] {
         color: $crust;
 
         &:hover {
-            background: darken($brand, 10%);
+            background: color.adjust($brand, $lightness: -10%);
         }
     }
 
@@ -754,7 +755,7 @@ div[class^="notice"] {
         color: $crust;
 
         button[class^="button"]:hover {
-            background: darken($mauve, 10%);
+            background: color.adjust($mauve, $lightness: -10%);
             color: $mantle;
         }
     }
@@ -778,7 +779,7 @@ div[class^="standardSidebarView"] div[class^="noticeRegion"] div[class^="actions
     border-color: $crust;
 
     &:hover {
-        background-color: darken($brand, 10%);
+        background-color: color.adjust($brand, $lightness: -10%);
     }
 }
 

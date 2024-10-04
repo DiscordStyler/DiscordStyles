@@ -1,307 +1,353 @@
 @use "@catppuccin/palette/scss/mocha" as *;
 @use "sass:math";
+@use "sass:color";
 
 $brand: $blue;
+$transparent-color: rgba(transparent, 0);
 
 [data-popout-root],
 html {
-    // weighted brand colors
-    --brand-experiment: #{$brand};
-    --brand-experiment-100: #{lighten($brand, math.div(90%, 2))};
-    --brand-experiment-130: #{lighten($brand, math.div(85%, 2))};
-    --brand-experiment-160: #{lighten($brand, math.div(80%, 2))};
-    --brand-experiment-200: #{lighten($brand, math.div(75%, 2))};
-    --brand-experiment-230: #{lighten($brand, math.div(70%, 2))};
-    --brand-experiment-260: #{lighten($brand, math.div(65%, 2))};
-    --brand-experiment-300: #{lighten($brand, math.div(60%, 2))};
-    --brand-experiment-330: #{lighten($brand, math.div(50%, 2))};
-    --brand-experiment-360: #{lighten($brand, math.div(40%, 2))};
-    --brand-experiment-400: #{lighten($brand, math.div(30%, 2))};
-    --brand-experiment-430: #{lighten($brand, math.div(20%, 2))};
-    --brand-experiment-460: #{lighten($brand, math.div(10%, 2))};
-    --brand-experiment-500: #{$brand};
-    --brand-experiment-530: #{darken($brand, math.div(10%, 2))};
-    --brand-experiment-560: #{darken($brand, math.div(20%, 2))};
-    --brand-experiment-600: #{darken($brand, math.div(30%, 2))};
-    --brand-experiment-630: #{darken($brand, math.div(40%, 2))};
-    --brand-experiment-660: #{darken($brand, math.div(50%, 2))};
-    --brand-experiment-700: #{darken($brand, math.div(60%, 2))};
-    --brand-experiment-730: #{darken($brand, math.div(65%, 2))};
-    --brand-experiment-760: #{darken($brand, math.div(70%, 2))};
-    --brand-experiment-800: #{darken($brand, math.div(75%, 2))};
-    --brand-experiment-830: #{darken($brand, math.div(80%, 2))};
-    --brand-experiment-860: #{darken($brand, math.div(85%, 2))};
-    --brand-experiment-900: #{darken($brand, math.div(90%, 2))};
-    // similar to other brand colors, except alpha only
-    --brand-experiment-05a: #{adjust-color($brand, $alpha: -0.95)};
-    --brand-experiment-10a: #{adjust-color($brand, $alpha: -0.9)};
-    --brand-experiment-15a: #{adjust-color($brand, $alpha: -0.85)};
-    --brand-experiment-20a: #{adjust-color($brand, $alpha: -0.8)};
-    --brand-experiment-25a: #{adjust-color($brand, $alpha: -0.75)};
-    --brand-experiment-30a: #{adjust-color($brand, $alpha: -0.7)};
-    --brand-experiment-35a: #{adjust-color($brand, $alpha: -0.65)};
-    --brand-experiment-40a: #{adjust-color($brand, $alpha: -0.6)};
-    --brand-experiment-45a: #{adjust-color($brand, $alpha: -0.55)};
-    --brand-experiment-50a: #{adjust-color($brand, $alpha: -0.5)};
-    --brand-experiment-55a: #{adjust-color($brand, $alpha: -0.45)};
-    --brand-experiment-60a: #{adjust-color($brand, $alpha: -0.4)};
-    --brand-experiment-65a: #{adjust-color($brand, $alpha: -0.35)};
-    --brand-experiment-70a: #{adjust-color($brand, $alpha: -0.3)};
-    --brand-experiment-75a: #{adjust-color($brand, $alpha: -0.25)};
-    --brand-experiment-80a: #{adjust-color($brand, $alpha: -0.2)};
-    --brand-experiment-85a: #{adjust-color($brand, $alpha: -0.15)};
-    --brand-experiment-90a: #{adjust-color($brand, $alpha: -0.1)};
-    --brand-experiment-95a: #{adjust-color($brand, $alpha: -0.05)};
+  // weighted brand colors
+  --corner-text: 'catppuccino';
+
+  --pad: 16px;
+  --txt-pad: 10px;
+
+  --panel-roundness: 0px;
+
+  --bg-0: #{$base};
+  --bg-1: #{color.adjust($base, $lightness: -4%, $space: oklch)};
+  --bg-2: #{color.adjust($base, $lightness: -8%, $space: oklch)};
+  --bg-3: #{color.adjust($base, $lightness: -12%, $space: oklch)};
+
+  --hover: oklch(54.29% 0.03 283.91 / 0.1);
+  --active: oklch(54.29% 0.03 283.91 / 0.2);
+  --selected: var(--active);
+
+  --txt-dark: var(--bg-0);
+  --txt-link: var(--cyan);
+  --txt-0: #{$text};
+  --txt-1: #{color.adjust($text, $lightness: -10%)};
+  --txt-2: #{color.adjust($text, $lightness: -25%)};
+  --txt-3: #{color.adjust($text, $lightness: -40%)};
+
+  --acc-0: var(--blue);
+  --acc-1: var(--blue-1);
+  --acc-2: var(--blue-2);
+
+  --border-width: 2px;
+  --border-color: var(--bg-3);
+  --border-hover-color: var(--acc-0);
+  --border-transition: 0.1s linear;
+
+  --online-dot: var(--green);
+  --dnd-dot: var(--pink);
+  --idle-dot: var(--yellow);
+  --streaming-dot: var(--blue);
+
+  --mention-txt: #{$brand};
+  --mention-bg: #{color.mix($brand, $transparent-color, $weight: 90%, $method: oklch)};
+  --mention-overlay: #{color.mix($brand, $transparent-color, $weight: 90%, $method: oklch)};
+  --mention-hover-overlay: #{color.mix($brand, $transparent-color, $weight: 95%, $method: oklch)};
+
+  --reply-overlay: var(--active);
+  --reply-hover-overlay: var(--hover);
+
+  --pink: #{$pink};
+  --pink-1: #{color.adjust($pink, $lightness: - math.div(20%, 2), $space: oklch)};
+  --pink-2: #{color.adjust($pink, $lightness: - math.div(40%, 2), $space: oklch)};
+
+  --purple: #{$mauve};
+  --purple-1: #{color.adjust($mauve, $lightness: - math.div(20%, 2), $space: oklch)};
+  --purple-2: #{color.adjust($mauve, $lightness: - math.div(40%, 2), $space: oklch)};
+
+  --blue: #{$blue};
+  --blue-1: #{color.adjust($blue, $lightness: - math.div(20%, 2), $space: oklch)};
+  --blue-2: #{color.adjust($blue, $lightness: - math.div(40%, 2), $space: oklch)};
+
+  --yellow: #{$yellow};
+  --cyan: #{$sky};
+
+  --green: #{$green};
+  --green-1: #{color.adjust($green, $lightness: - math.div(20%, 2), $space: oklch)};
+  --green-2: #{color.adjust($green, $lightness: - math.div(40%, 2), $space: oklch)};
+
+  --brand-experiment: #{$brand};
+  --brand-experiment-100: #{color.adjust($brand, $lightness: math.div(90%, 2))};
+  --brand-experiment-130: #{color.adjust($brand, $lightness: math.div(85%, 2))};
+  --brand-experiment-160: #{color.adjust($brand, $lightness: math.div(80%, 2))};
+  --brand-experiment-200: #{color.adjust($brand, $lightness: math.div(75%, 2))};
+  --brand-experiment-230: #{color.adjust($brand, $lightness: math.div(70%, 2))};
+  --brand-experiment-260: #{color.adjust($brand, $lightness: math.div(65%, 2))};
+  --brand-experiment-300: #{color.adjust($brand, $lightness: math.div(60%, 2))};
+  --brand-experiment-330: #{color.adjust($brand, $lightness: math.div(50%, 2))};
+  --brand-experiment-360: #{color.adjust($brand, $lightness: math.div(40%, 2))};
+  --brand-experiment-400: #{color.adjust($brand, $lightness: math.div(30%, 2))};
+  --brand-experiment-430: #{color.adjust($brand, $lightness: math.div(20%, 2))};
+  --brand-experiment-460: #{color.adjust($brand, $lightness: math.div(10%, 2))};
+  --brand-experiment-500: #{$brand};
+  --brand-experiment-530: #{color.adjust($brand, $lightness: - math.div(10%, 2))};
+  --brand-experiment-560: #{color.adjust($brand, $lightness: - math.div(20%, 2))};
+  --brand-experiment-600: #{color.adjust($brand, $lightness: - math.div(30%, 2))};
+  --brand-experiment-630: #{color.adjust($brand, $lightness: - math.div(40%, 2))};
+  --brand-experiment-660: #{color.adjust($brand, $lightness: - math.div(50%, 2))};
+  --brand-experiment-700: #{color.adjust($brand, $lightness: - math.div(60%, 2))};
+  --brand-experiment-730: #{color.adjust($brand, $lightness: - math.div(65%, 2))};
+  --brand-experiment-760: #{color.adjust($brand, $lightness: - math.div(70%, 2))};
+  --brand-experiment-800: #{color.adjust($brand, $lightness: - math.div(75%, 2))};
+  --brand-experiment-830: #{color.adjust($brand, $lightness: - math.div(80%, 2))};
+  --brand-experiment-860: #{color.adjust($brand, $lightness: - math.div(85%, 2))};
+  --brand-experiment-900: #{color.adjust($brand, $lightness: - math.div(90%, 2))};
+  // similar to other brand colors, except alpha only
+  --brand-experiment-05a: #{adjust-color($brand, $alpha: -0.95)};
+  --brand-experiment-10a: #{adjust-color($brand, $alpha: -0.9)};
+  --brand-experiment-15a: #{adjust-color($brand, $alpha: -0.85)};
+  --brand-experiment-20a: #{adjust-color($brand, $alpha: -0.8)};
+  --brand-experiment-25a: #{adjust-color($brand, $alpha: -0.75)};
+  --brand-experiment-30a: #{adjust-color($brand, $alpha: -0.7)};
+  --brand-experiment-35a: #{adjust-color($brand, $alpha: -0.65)};
+  --brand-experiment-40a: #{adjust-color($brand, $alpha: -0.6)};
+  --brand-experiment-45a: #{adjust-color($brand, $alpha: -0.55)};
+  --brand-experiment-50a: #{adjust-color($brand, $alpha: -0.5)};
+  --brand-experiment-55a: #{adjust-color($brand, $alpha: -0.45)};
+  --brand-experiment-60a: #{adjust-color($brand, $alpha: -0.4)};
+  --brand-experiment-65a: #{adjust-color($brand, $alpha: -0.35)};
+  --brand-experiment-70a: #{adjust-color($brand, $alpha: -0.3)};
+  --brand-experiment-75a: #{adjust-color($brand, $alpha: -0.25)};
+  --brand-experiment-80a: #{adjust-color($brand, $alpha: -0.2)};
+  --brand-experiment-85a: #{adjust-color($brand, $alpha: -0.15)};
+  --brand-experiment-90a: #{adjust-color($brand, $alpha: -0.1)};
+  --brand-experiment-95a: #{adjust-color($brand, $alpha: -0.05)};
 }
 
 .theme-dark,
 .theme-light {
-    --header-primary: #{$text};
-    --header-secondary: #{$subtext0};
+  --header-primary: #{$text};
+  --header-secondary: #{$subtext0};
 
-    --text-normal: #{$text};
-    --text-muted: #{$subtext0};
-    --text-link: #{$blue};
-    --text-link-low-saturation: #{$sapphire};
-    --text-positive: #{$green};
-    --text-warning: #{$yellow};
-    --text-danger: #{$red};
-    --text-brand: #{$brand};
+  --text-normal: #{$text};
+  --text-muted: #{$subtext0};
+  --text-link: #{$blue};
+  --text-link-low-saturation: #{$sapphire};
+  --text-positive: #{$green};
+  --text-warning: #{$yellow};
+  --text-danger: #{$red};
+  --text-brand: #{$brand};
 
-    --background-primary: #{$base};
-    --background-secondary: #{$mantle};
-    --background-secondary-alt: #{darken($mantle, 2%)};
-    --background-tertiary: #{$crust};
-    --background-accent: #{$brand};
-    --background-floating: #{darken($crust, 2%)};
-    --background-nested-floating: #{$mantle};
-    --background-mobile-primary: #{$base};
-    --background-mobile-secondary: #{$mantle};
-    --bg-base-secondary: #{$mantle};
-    --bg-surface-raised: #{$base};
+  --background-primary: #{$base};
+  --background-secondary: #{$mantle};
+  --background-secondary-alt: #{color.adjust($mantle, $lightness: -2%)};
+  --background-tertiary: #{$crust};
+  --background-accent: #{$brand};
+  --background-floating: #{color.adjust($crust, $lightness: -2%)};
+  --background-nested-floating: #{$mantle};
+  --background-mobile-primary: #{$base};
+  --background-mobile-secondary: #{$mantle};
+  --bg-base-secondary: #{$mantle};
+  --bg-surface-raised: #{$base};
 
-    --home-background: #{$base};
-    --chat-background: #{$base};
-    --chat-border: #{$crust};
-    --chat-input-container-background: #{$base};
+  --home-background: #{$base};
+  --chat-background: #{$base};
+  --chat-border: #{$crust};
+  --chat-input-container-background: #{$base};
 
-    --background-modifier-hover: #{adjust-color($text, $alpha: -0.85)};
-    --background-modifier-selected: #{adjust-color($text, $alpha: -0.8)};
-    --background-modifier-accent: #{adjust-color($text, $alpha: -0.74)};
-    --background-modifier-active: #{adjust-color($text, $alpha: -0.83)};
+  --background-modifier-hover: #{adjust-color($text, $alpha: -0.85)};
+  --background-modifier-selected: #{adjust-color($text, $alpha: -0.8)};
+  --background-modifier-accent: #{adjust-color($text, $alpha: -0.74)};
+  --background-modifier-active: #{adjust-color($text, $alpha: -0.83)};
 
-    --info-positive-background: #{adjust-color($green, $alpha: -0.85)};
-    --info-positive-foreground: #{$green};
-    --info-positive-text: #{$text};
+  --info-positive-background: #{adjust-color($green, $alpha: -0.85)};
+  --info-positive-foreground: #{$green};
+  --info-positive-text: #{$text};
 
-    --info-warning-background: #{adjust-color($yellow, $alpha: -0.85)};
-    --info-warning-foreground: #{$yellow};
-    --info-warning-text: #{$text};
+  --info-warning-background: #{adjust-color($yellow, $alpha: -0.85)};
+  --info-warning-foreground: #{$yellow};
+  --info-warning-text: #{$text};
 
-    --info-danger-background: #{adjust-color($red, $alpha: -0.85)};
-    --info-danger-foreground: #{$red};
-    --info-danger-text: #{$text};
+  --info-danger-background: #{adjust-color($red, $alpha: -0.85)};
+  --info-danger-foreground: #{$red};
+  --info-danger-text: #{$text};
 
-    --info-help-background: #{adjust-color($sky, $alpha: -0.85)};
-    --info-help-foreground: #{$sky};
-    --info-help-text: #{$text};
+  --info-help-background: #{adjust-color($sky, $alpha: -0.85)};
+  --info-help-foreground: #{$sky};
+  --info-help-text: #{$text};
 
-    --status-positive-background: #{$green};
-    --status-positive-text: #{$base};
+  --status-positive-background: #{$green};
+  --status-positive-text: #{$base};
 
-    --status-warning-background: #{$yellow};
-    --status-warning-text: #{$base};
+  --status-warning-background: #{$yellow};
+  --status-warning-text: #{$base};
 
-    --status-danger-background: #{$red};
-    --status-danger-text: #{$base};
+  --status-danger-background: #{$red};
+  --status-danger-text: #{$base};
 
-    --status-danger: #{$red};
-    --status-positive: #{$green};
-    --status-warning: #{$yellow};
+  --status-danger: #{$red};
+  --status-positive: #{$green};
+  --status-warning: #{$yellow};
 
-    // the next 3 are present in the voice check in settings
-    --status-yellow-400: #{$yellow};
-    --status-green-600: #{$green};
-    --primary-dark-600: #{$base};
+  // the next 3 are present in the voice check in settings
+  --status-yellow-400: #{$yellow};
+  --status-green-600: #{$green};
+  --primary-dark-600: #{$base};
 
-    // radioBar borders
-    --status-yellow-560: #{$yellow};
-    --status-red-500: #{$red};
+  // radioBar borders
+  --status-yellow-560: #{$yellow};
+  --status-red-500: #{$red};
 
-    --status-red-530: #{$red};
+  --status-red-530: #{$red};
 
-    // colorWarning
-    --status-yellow-500: #{$yellow};
-    --black-500: #{$crust};
+  // colorWarning
+  --status-yellow-500: #{$yellow};
+  --black-500: #{$crust};
 
-    --green-360: #{$green};
-    --yellow-360: #{$yellow};
-    --yellow-300: #{$yellow};
-    --red-400: #{$red};
+  --green-360: #{$green};
+  --yellow-360: #{$yellow};
+  --yellow-300: #{$yellow};
+  --red-400: #{$red};
 
-    --brand-500: #{$brand};
-    --brand-560: #{darken($brand, math.div(20%, 2))};
+  --brand-500: #{$brand};
+  --brand-560: #{color.adjust($brand, $lightness: - math.div(20%, 2))};
 
-    --primary-100: #{$subtext1};
-    --primary-300: #{$subtext1};
-    --primary-400: #{$subtext1};
-    --primary-dark-700: #{$crust};
-    --primary-800: #{$crust};
+  --primary-100: #{$subtext1};
+  --primary-300: #{$subtext1};
+  --primary-400: #{$subtext1};
+  --primary-dark-700: #{$crust};
+  --primary-800: #{$crust};
 
-    // update discord icon
-    --status-green-560: #{$green};
+  // update discord icon
+  --status-green-560: #{$green};
 
-    --white-400: #{$text};
-    --white-500: #{$text};
+  --white-400: #{$text};
+  --white-500: #{$text};
 
-    --guild-boosting-pink: #{$pink};
-    --premium-perk-yellow: #{$yellow};
-    --premium-perk-purple: #{$mauve};
-    --premium-perk-dark-blue: #{darken($blue, math.div(20%, 2))};
-    --premium-perk-light-blue: #{lighten($blue, math.div(10%, 2))};
-    --premium-perk-blue: #{$blue};
-    --premium-perk-green: #{$green};
-    --premium-perk-pink: #{$pink};
-    --premium-perk-orange: #{$peach};
+  --guild-boosting-pink: #{$pink};
+  --premium-perk-yellow: #{$yellow};
+  --premium-perk-purple: #{$mauve};
+  --premium-perk-dark-blue: #{color.adjust($blue, $lightness: - math.div(20%, 2))};
+  --premium-perk-light-blue: #{color.adjust($blue, $lightness: math.div(10%, 2))};
+  --premium-perk-blue: #{$blue};
+  --premium-perk-green: #{$green};
+  --premium-perk-pink: #{$pink};
+  --premium-perk-orange: #{$peach};
 
-    --status-green-400: #{$green};
+  --status-green-400: #{$green};
 
-    --button-danger-background: #{$red};
-    --button-danger-background-hover: #{darken($red, math.div(10%, 2))};
-    --button-danger-background-active: #{darken($brand, math.div(15%, 2))};
-    --button-danger-background-disabled: #{$red};
+  --button-danger-background: #{$red};
+  --button-danger-background-hover: #{color.adjust($red, $lightness: - math.div(10%, 2))};
+  --button-danger-background-active: #{color.adjust($brand, $lightness: - math.div(15%, 2))};
+  --button-danger-background-disabled: #{$red};
 
-    --button-positive-background: #{$green};
-    --button-positive-background-hover: #{darken($green, math.div(10%, 2))};
-    --button-positive-background-active: #{darken($green, math.div(15%, 2))};
-    --button-positive-background-disabled: #{$green};
+  --button-positive-background: #{$green};
+  --button-positive-background-hover: #{color.adjust($green, $lightness: - math.div(10%, 2))};
+  --button-positive-background-active: #{color.adjust($green, $lightness: - math.div(15%, 2))};
+  --button-positive-background-disabled: #{$green};
 
-    --button-secondary-background: #{$surface1};
-    --button-secondary-background-hover: #{darken($surface1, math.div(10%, 2))};
-    --button-secondary-background-active: #{darken($surface1, math.div(10%, 2))};
-    --button-secondary-background-disabled: #{$surface1};
+  --button-secondary-background: #{$surface1};
+  --button-secondary-background-hover: #{color.adjust($surface1, $lightness: - math.div(10%, 2))};
+  --button-secondary-background-active: #{color.adjust($surface1, $lightness: - math.div(10%, 2))};
+  --button-secondary-background-disabled: #{$surface1};
 
-    --button-outline-danger-text: #{$text};
-    --button-outline-danger-border: #{$red};
-    --button-outline-danger-background: transparent;
-    --button-outline-danger-background-hover: #{darken($red, math.div(5%, 2))};
-    --button-outline-danger-text-hover: #{$base};
-    --button-outline-danger-border-hover: #{darken($red, math.div(5%, 2))};
-    --button-outline-danger-background-active: #{darken($red, math.div(10%, 2))};
-    --button-outline-danger-text-active: #{$base};
-    --button-outline-danger-border-active: #{darken($red, math.div(5%, 2))};
+  --button-outline-danger-text: #{$text};
+  --button-outline-danger-border: #{$red};
+  --button-outline-danger-background: transparent;
+  --button-outline-danger-background-hover: #{color.adjust($red, $lightness: - math.div(5%, 2))};
+  --button-outline-danger-text-hover: #{$base};
+  --button-outline-danger-border-hover: #{color.adjust($red, $lightness: - math.div(5%, 2))};
+  --button-outline-danger-background-active: #{color.adjust($red, $lightness: - math.div(10%, 2))};
+  --button-outline-danger-text-active: #{$base};
+  --button-outline-danger-border-active: #{color.adjust($red, $lightness: - math.div(5%, 2))};
 
-    --button-outline-positive-text: #{$text};
-    --button-outline-positive-border: #{$green};
-    --button-outline-positive-background: transparent;
-    --button-outline-positive-background-hover: #{darken($green, math.div(5%, 2))};
-    --button-outline-positive-text-hover: #{$base};
-    --button-outline-positive-border-hover: #{darken($green, math.div(5%, 2))};
-    --button-outline-positive-background-active: #{darken(
- $green,
-    math.div(10%, 2))
-}
+  --button-outline-positive-text: #{$text};
+  --button-outline-positive-border: #{$green};
+  --button-outline-positive-background: transparent;
+  --button-outline-positive-background-hover: #{color.adjust($green, $lightness: - math.div(5%, 2))};
+  --button-outline-positive-text-hover: #{$base};
+  --button-outline-positive-border-hover: #{color.adjust($green, $lightness: - math.div(5%, 2))};
+  --button-outline-positive-background-active: #{color.adjust($green, $lightness: - math.div(10%, 2))};
+  --button-outline-positive-text-active: #{$base};
+  --button-outline-positive-border-active: #{color.adjust($green, $lightness: - math.div(5%, 2))};
 
-;
---button-outline-positive-text-active: #{$base};
---button-outline-positive-border-active: #{darken($green, math.div(5%, 2))};
+  --button-outline-brand-text: #{$text};
+  --button-outline-brand-border: #{$brand};
+  --button-outline-brand-background: transparent;
+  --button-outline-brand-background-hover: #{color.adjust($brand, $lightness: - math.div(5%, 2))};
+  --button-outline-brand-text-hover: #{$base};
+  --button-outline-brand-border-hover: #{color.adjust($brand, $lightness: - math.div(5%, 2))};
+  --button-outline-brand-background-active: #{color.adjust($brand, $lightness: - math.div(10%, 2))};
+  --button-outline-brand-text-active: #{$base};
+  --button-outline-brand-border-active: #{color.adjust($brand, $lightness: - math.div(5%, 2))};
 
---button-outline-brand-text: #{$text};
---button-outline-brand-border: #{$brand};
---button-outline-brand-background: transparent;
---button-outline-brand-background-hover: #{darken($brand, math.div(5%, 2))};
---button-outline-brand-text-hover: #{$base};
---button-outline-brand-border-hover: #{darken($brand, math.div(5%, 2))};
---button-outline-brand-background-active: #{darken($brand, math.div(10%, 2))};
---button-outline-brand-text-active: #{$base};
---button-outline-brand-border-active: #{darken($brand, math.div(5%, 2))};
+  --button-outline-primary-text: #{$text};
+  --button-outline-primary-border: #{$surface2};
+  --button-outline-primary-background: transparent;
+  --button-outline-primary-background-hover: #{color.adjust($surface2, $lightness: - math.div(5%, 2))};
+  --button-outline-primary-text-hover: #{$base};
+  --button-outline-primary-border-hover: #{color.adjust($surface2, $lightness: - math.div(5%, 2))};
+  --button-outline-primary-background-active: #{color.adjust($surface2, $lightness: - math.div(10%, 2))};
+  --button-outline-primary-text-active: #{$base};
+  --button-outline-primary-border-active: #{color.adjust($surface2, $lightness: - math.div(5%, 2))};
 
---button-outline-primary-text: #{$text};
---button-outline-primary-border: #{$surface2};
---button-outline-primary-background: transparent;
---button-outline-primary-background-hover: #{darken(
- $surface2,
-math.div(5%, 2))
-}
+  --modal-background: #{$base};
+  --modal-footer-background: #{$crust};
 
-;
---button-outline-primary-text-hover: #{$base};
---button-outline-primary-border-hover: #{darken($surface2, math.div(5%, 2))};
---button-outline-primary-background-active: #{darken(
- $surface2,
-math.div(10%, 2))
-}
+  --scrollbar-thin-thumb: #{$brand};
+  --scrollbar-thin-track: transparent;
+  --scrollbar-auto-thumb: #{$brand};
+  --scrollbar-auto-track: #{$crust};
 
-;
---button-outline-primary-text-active: #{$base};
---button-outline-primary-border-active: #{darken($surface2, math.div(5%, 2))};
+  --scrollbar-auto-scrollbar-color-thumb: #{$brand};
+  --scrollbar-auto-scrollbar-color-track: #{$crust};
 
---modal-background: #{$base};
---modal-footer-background: #{$crust};
+  --input-background: #{$crust};
+  --input-placeholder-text: #{$subtext1};
 
---scrollbar-thin-thumb: #{$brand};
---scrollbar-thin-track: transparent;
---scrollbar-auto-thumb: #{$brand};
---scrollbar-auto-track: #{$crust};
+  --logo-primary: #{$text};
 
---scrollbar-auto-scrollbar-color-thumb: #{$brand};
---scrollbar-auto-scrollbar-color-track: #{$crust};
+  --control-brand-foreground: #{$brand};
+  --control-brand-foreground-new: #{$brand};
+  --mention-foreground: #{$brand};
+  --mention-background: #{adjust-color($brand, $alpha: -0.7)};
 
---input-background: #{$crust};
---input-placeholder-text: #{$subtext1};
+  --background-mentioned: #{adjust-color($yellow, $alpha: -0.9)};
+  --background-mentioned-hover: #{adjust-color($yellow, $alpha: -0.92)};
+  --background-message-hover: #{adjust-color($crust, $alpha: -0.75)};
+  --background-message-automod: #{adjust-color($rosewater, $alpha: -0.95)};
+  --background-message-automod-hover: #{adjust-color($rosewater, $alpha: -0.9)};
+  --background-message-highlight: #{adjust-color($brand, $alpha: -0.9)};
+  --background-message-highlight-hover: #{adjust-color($brand, $alpha: -0.92)};
 
---logo-primary: #{$text};
+  --channels-default: #{color.adjust($subtext0, $lightness: -5%)};
+  --channel-icon: #{color.adjust($subtext0, $lightness: -5%)};
+  --channel-text-area-placeholder: #{adjust-color($text, $alpha: -0.5)};
+  --channeltextarea-background: #{$mantle};
 
---control-brand-foreground: #{$brand};
---control-brand-foreground-new: #{$brand};
---mention-foreground: #{$brand};
---mention-background: #{adjust-color($brand, $alpha: -0.7)};
+  --activity-card-background: #{$crust};
 
---background-mentioned: #{adjust-color($yellow, $alpha: -0.9)};
---background-mentioned-hover: #{adjust-color($yellow, $alpha: -0.92)};
---background-message-hover: #{adjust-color($crust, $alpha: -0.75)};
---background-message-automod: #{adjust-color($rosewater, $alpha: -0.95)};
---background-message-automod-hover: #{adjust-color($rosewater, $alpha: -0.9)};
---background-message-highlight: #{adjust-color($brand, $alpha: -0.9)};
---background-message-highlight-hover: #{adjust-color($brand, $alpha: -0.92)};
+  --textbox-markdown-syntax: #{$overlay0};
 
---channels-default: #{darken($subtext0, 5%)};
---channel-icon: #{darken($subtext0, 5%)};
---channel-text-area-placeholder: #{adjust-color($text, $alpha: -0.5)};
---channeltextarea-background: #{$mantle};
+  --spoiler-revealed-background: #{$surface0};
+  --spoiler-hidden-background: #{$surface2};
 
---activity-card-background: #{$crust};
+  --android-navigation-bar-background: #{$crust};
+  --android-ripple: #{adjust-color($crust, $alpha: -0.7)};
 
---textbox-markdown-syntax: #{$overlay0};
+  --deprecated-card-bg: #{adjust-color($crust, $alpha: -0.4)};
+  --deprecated-card-editable-bg: #{adjust-color($crust, $alpha: -0.7)};
 
---spoiler-revealed-background: #{$surface0};
---spoiler-hidden-background: #{$surface2};
+  --bg-mod-faint: #{$mantle};
+  --bg-mod-subtle: #{surface1};
 
---android-navigation-bar-background: #{$crust};
---android-ripple: #{adjust-color($crust, $alpha: -0.7)};
-
---deprecated-card-bg: #{adjust-color($crust, $alpha: -0.4)};
---deprecated-card-editable-bg: #{adjust-color($crust, $alpha: -0.7)};
-
---bg-mod-faint: #{$mantle};
---bg-mod-subtle: #{surface1};
-
---deprecated-store-bg: #{$base};
---deprecated-quickswitcher-input-background: #{darken(
- $surface2,
-math.div(10%, 2))
-}
-
-;
---deprecated-quickswitcher-input-placeholder: #{adjust-color(
+  --deprecated-store-bg: #{$base};
+  --deprecated-quickswitcher-input-background: #{color.adjust($surface2, $lightness: - math.div(10%, 2))};
+  --deprecated-quickswitcher-input-placeholder: #{adjust-color(
  $crust,
-$alpha: -0.7)
+  $alpha: -0.7)
 }
 
 ;
 --deprecated-text-input-bg: #{$crust};
 --deprecated-text-input-border: #{adjust-color($crust, $alpha: -0.7)};
---deprecated-text-input-border-hover: #{darken($crust, math.div(10%, 2))};
+--deprecated-text-input-border-hover: #{color.adjust($crust, $lightness: - math.div(10%, 2))};
 --deprecated-text-input-border-disabled: #{$mantle};
 --deprecated-text-input-prefix: #{$subtext0};
 
@@ -315,22 +361,22 @@ $alpha: -0.7)
 --search-popout-option-non-text-color: #{$subtext0};
 
 --__spoiler-background-color--hidden: #{$surface2};
---__spoiler-warning-background-color: #{lighten($surface2, 5%)};
+--__spoiler-warning-background-color: #{color.adjust($surface2, $lightness: 5%)};
 }
 
 ::selection {
-    background-color: #{rgba($brand, 0.6)};
+  background-color: #{rgba($brand, 0.6)};
 }
 
 // modified from https://stackoverflow.com/a/62880368
 @mixin recolor($color: #000) {
-    filter: url('data:image/svg+xml;utf8,\
+  filter: url('data:image/svg+xml;utf8,\
     <svg xmlns="http://www.w3.org/2000/svg">\
       <filter id="ctp-recol /* RadialGlow effect for avatars. | Remove this line to disable. */or" color-interpolation-filters="sRGB">\
         <feColorMatrix type="matrix" values="\
-          0 0 0 0 #{math.div(red($color), 255)}\
-          0 0 0 0 #{math.div(green($color), 255)}\
-          0 0 0 0 #{math.div(blue($color), 255)}\
+          0 0 0 0 #{math.div(color.channel($color, "red"), 255)}\
+          0 0 0 0 #{math.div(color.channel($color, "green"), 255)}\
+          0 0 0 0 #{math.div(color.channel($color, "blue"), 255)}\
           0 0 0 1 0\
         "/>\
       </filter>\

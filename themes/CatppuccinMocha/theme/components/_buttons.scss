@@ -1,4 +1,5 @@
 @use "@catppuccin/palette/scss/mocha" as *;
+@use "sass:color";
 
 // filled buttons and badges should have crust text
 [class*="lookFilled_"] {
@@ -12,7 +13,7 @@
   
       // darken the nitro button too
       svg[class^="premiumIcon"] {
-        color: darken($pink, 20%) !important;
+        color: color.adjust($pink, $lightness: -20%) !important;
       }
   
       // spinner color
@@ -73,7 +74,7 @@
   
     // darken the nitro button too
     svg[class^="premiumIcon"] {
-      color: darken($pink, 15%) !important;
+      color: color.adjust($pink, $lightness: -15%) !important;
     }
   }
   
@@ -91,7 +92,7 @@
   
   // dangerous button when hovered is colored properly
   div[class*="button_"][class*="dangerous_"]:hover {
-    color: darken($red, 10%);
+    color: color.adjust($red, $lightness: -10%);
   }
   
   // make all selected radio buttons's text crust

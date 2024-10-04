@@ -14,9 +14,9 @@ export default {
         target: "themes/ClearVision/dist.scss",
         output: "dist/ClearVision",
     },
-	dev: {
-        target: "themes/ClearVision/dev.scss",
-        output: "dist/ClearVision",
-    },
+	// dev: {
+    //     target: "themes/ClearVision/dev.scss",
+    //     output: "dist/ClearVision",
+    // },
 	baseImport: 'https://discordstyler.github.io/DiscordStyles/ClearVision/ClearVision.css',
 };

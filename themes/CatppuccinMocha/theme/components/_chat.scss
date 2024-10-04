@@ -1,4 +1,5 @@
 @use "@catppuccin/palette/scss/mocha" as *;
+@use "sass:color";
 @use '../variables' as *;
 
 [class^="chatContent"] {
@@ -177,7 +178,7 @@
         background-color: $surface2;
   
         &:hover {
-          background-color: lighten($surface2, 5%);
+          background-color: color.adjust($surface2, $lightness: 5%);
         }
       }
     }
@@ -191,13 +192,13 @@
         @include header-list($surface2);
   
         &:hover {
-          //background-color: lighten($surface2, 5%);
-          @include header-list(lighten($surface2, 5%));
+          //background-color: color.adjust($surface2, $lightness: 5%);
+          @include header-list(color.adjust($surface2, $lightness: 5%));
         }
       }
   
       pre div[class^="codeContainer"]:hover {
-        background-color: lighten($surface2, 5%);
+        background-color: color.adjust($surface2, $lightness: 5%);
         border-radius: 4px;
       }
     }
@@ -364,7 +365,7 @@
     ol[class^="scrollerInner"]
     > div[class^="container"]:not([class*="cozy"]) {
     div[class^="emptyChannelIcon"] {
-      background-image: url("data:image/svg+xml,%3Csvg fill='rgb(#{red($crust), green($crust), blue($crust)})' height='44' viewBox='0 0 44 44' width='44' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath clip-rule='evenodd' d='m10.295 38.5c-.31112 0-.54669-.2811-.49232-.5874l1.19742-6.7459h-6.73825c-.31061 0-.54605-.2803-.49251-.5862l.46666-2.6667c.04187-.2392.24963-.4138.49252-.4138h6.91328l1.9433-11h-6.73825c-.31061 0-.54605-.2802-.49251-.5862l.46666-2.6667c.04187-.2392.24963-.4138.49252-.4138h6.91328l1.2284-6.92068c.0424-.23871.2499-.41262.4923-.41262h2.651c.3111 0 .5467.28107.4923.58738l-1.1974 6.74592h11l1.2284-6.92068c.0424-.23871.2499-.41262.4924-.41262h2.651c.3111 0 .5467.28107.4923.58738l-1.1974 6.74592h6.7382c.3106 0 .5461.2803.4925.5862l-.4666 2.6667c-.0419.2392-.2497.4138-.4925.4138h-6.9133l-1.9433 11h6.7382c.3106 0 .5461.2802.4925.5862l-.4666 2.6667c-.0419.2392-.2497.4138-.4925.4138h-6.9133l-1.2284 6.9207c-.0424.2387-.2499.4126-.4923.4126h-2.651c-.3111 0-.5467-.2811-.4924-.5874l1.1975-6.7459h-11l-1.2285 6.9207c-.0423.2387-.2498.4126-.4923.4126zm6.9576-22-1.9434 11h11l1.9434-11z'/%3E%3C/svg%3E");
+      background-image: url("data:image/svg+xml,%3Csvg fill='rgb(#{color.channel($crust, "red"), color.channel($crust, "green"), color.channel($crust, "blue")})' height='44' viewBox='0 0 44 44' width='44' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath clip-rule='evenodd' d='m10.295 38.5c-.31112 0-.54669-.2811-.49232-.5874l1.19742-6.7459h-6.73825c-.31061 0-.54605-.2803-.49251-.5862l.46666-2.6667c.04187-.2392.24963-.4138.49252-.4138h6.91328l1.9433-11h-6.73825c-.31061 0-.54605-.2802-.49251-.5862l.46666-2.6667c.04187-.2392.24963-.4138.49252-.4138h6.91328l1.2284-6.92068c.0424-.23871.2499-.41262.4923-.41262h2.651c.3111 0 .5467.28107.4923.58738l-1.1974 6.74592h11l1.2284-6.92068c.0424-.23871.2499-.41262.4924-.41262h2.651c.3111 0 .5467.28107.4923.58738l-1.1974 6.74592h6.7382c.3106 0 .5461.2803.4925.5862l-.4666 2.6667c-.0419.2392-.2497.4138-.4925.4138h-6.9133l-1.9433 11h6.7382c.3106 0 .5461.2802.4925.5862l-.4666 2.6667c-.0419.2392-.2497.4138-.4925.4138h-6.9133l-1.2284 6.9207c-.0424.2387-.2499.4126-.4923.4126h-2.651c-.3111 0-.5467-.2811-.4924-.5874l1.1975-6.7459h-11l-1.2285 6.9207c-.0423.2387-.2498.4126-.4923.4126zm6.9576-22-1.9434 11h11l1.9434-11z'/%3E%3C/svg%3E");
       background-repeat: no-repeat;
       background-position: center;
   
@@ -690,7 +691,7 @@
     color: $red !important;
   }
   .messagelogger-deleted div a {
-    color: #{darken($red, 5%)} !important;
+    color: #{color.adjust($red, $lightness: -5%)} !important;
   }
   
   // Members sidebar

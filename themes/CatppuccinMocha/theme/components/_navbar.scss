@@ -1,4 +1,5 @@
 @use "@catppuccin/palette/scss/mocha" as *;
+@use "sass:color";
 
 nav[class*="guilds_"] {
 
@@ -16,16 +17,16 @@ nav[class*="guilds_"] {
 
     // lightens home nav bg
     div[data-list-item-id="guildsnav___home"] {
-        --background-primary: #{lighten($base, 3%)};
+        --background-primary: #{color.adjust($base, $lightness: 3%)};
     }
 
     // lightens folder wrapper bg
     span[class^="expandedFolderBackground"] {
-        background-color: lighten($base, 3%);
+        background-color: color.adjust($base, $lightness: 3%);
     }
 
     div[class^="folder"][class*="hover_"] {
-        background-color: lighten($base, 8%);
+        background-color: color.adjust($base, $lightness: 8%);
     }
 
     // create server/discovery

@@ -14,9 +14,12 @@ export default {
         target: "themes/CatppuccinMocha/dist.scss",
         output: "dist/CatppuccinMocha",
     },
-	dev: {
-        target: "themes/CatppuccinMocha/dev.scss",
-        output: "dist/CatppuccinMocha",
-    },
+	// dev: {
+    //     target: "themes/CatppuccinMocha/dev.scss",
+    //     output: "dist/CatppuccinMocha",
+    // },
 	baseImport: 'https://discordstyler.github.io/DiscordStyles/CatppuccinMocha/CatppuccinMocha.css',
+	addons: [
+		['themes/CatppuccinMocha/addons/_unrounding.scss', 'dist/CAtppuccinMocha/Unrounding.css'],
+	]
 };
