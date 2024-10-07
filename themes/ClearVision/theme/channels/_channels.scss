@@ -8,10 +8,12 @@
 %channelsSidebar {
   width: functions.cv('channels-width');
   background: rgba(0, 0, 0, calc(#{functions.cv('bg.app.shading')} * 0.3));
+
   %platformWin & {
     border-radius: 0;
   }
 }
+
 %themeDark %channelsContainer {
   background: transparent;
 
@@ -22,6 +24,7 @@
     font-family: functions.cv('font.main');
     font-weight: 600;
     text-shadow: 0 0 3px #000;
+
     &:hover {
       background-color: hsla(0, 0%, 100%, 0.1);
     }
@@ -32,14 +35,17 @@
     background: transparent;
     box-shadow: none;
   }
+
   %bannerImage {
     width: functions.cv('channels-width');
     -webkit-mask: linear-gradient(to bottom, #000, transparent);
     mask: linear-gradient(to bottom, #000, transparent);
   }
+
   %threadChannelConnector {
     color: $main-color;
   }
+
   %threadChannelSpine {
     background: $main-color;
   }
@@ -54,9 +60,11 @@
 %channelLink {
   transition: all 0.15s ease-in-out;
 }
+
 %channelLink {
   position: relative;
   background: transparent !important;
+
   &:before {
     content: '';
     position: absolute;
@@ -66,6 +74,7 @@
     pointer-events: none;
     border-radius: 4px;
   }
+
   &:after {
     content: '';
     position: absolute;
@@ -76,6 +85,7 @@
     pointer-events: none;
     border-radius: 4px;
   }
+
   %channelIcon {
     width: 18px;
     height: 18px;
@@ -83,51 +93,66 @@
     color: var(--channel-color);
     opacity: 1;
     transition: all 0.15s ease-in-out;
-    > path {
+
+    >path {
       opacity: 0.7;
     }
-    > path:last-of-type {
+
+    >path:last-of-type {
       opacity: 1;
     }
   }
+
   %channelName {
     color: var(--channel-color);
     transition: all 0.15s ease-in-out;
   }
 }
+
 %channelButtons {
   margin-left: 1px;
   animation: cv-fade-to-3 0.15s ease-in-out;
 }
+
 %channelActionIcon {
   color: #fff;
   opacity: 0.3;
   transition: all 0.15s ease-in-out;
+
   path {
     fill: #fff;
   }
+
   &:hover {
     opacity: 0.7;
   }
 }
+
 %channelStatusText,
 %channelStatusPencilIcon {
-  color: hsla(0,0%,100%,.7);
+  color: hsla(0, 0%, 100%, .7);
 }
+
 %channelWrapper {
+
   // HOVER
   &:hover {
+
     %channelName,
     %channelIcon {
       color: #fff;
     }
+
     %channelLink {
       background: var(--bg-overlay-hover, var(--background-modifier-hover));
+
       &:before {
         background: hsla(0, 0%, 100%, 0.1);
       }
+
       %channelLinkTop {
         %channelContainerDefault & {
+
           %channelIcon,
           %channelName {
             color: hsla(0, 0%, 100%, 0.7);
@@ -136,6 +161,7 @@
       }
     }
   }
+
   // UNREAD
   &%channelWrapperUnread {
     %channelLink {
@@ -144,6 +170,7 @@
           color: var(--channel-unread);
           text-shadow: 0 0 3px;
         }
+
         %channelIcon {
           color: var(--channel-unread);
           filter: drop-shadow(0 0 3px);
@@ -151,12 +178,14 @@
         }
       }
     }
+
     &:hover {
       %channelLink {
         %channelLinkTop {
           %channelName {
             color: var(--channel-text-selected);
           }
+
           %channelIcon {
             color: var(--channel-text-selected);
           }
@@ -164,37 +193,47 @@
       }
     }
   }
+
   // SELECTED
   &%channelWrapperSelected {
+
     %channelName,
     %channelIcon {
       color: #fff;
     }
+
     %channelLink {
       &:before {
         background: hsla(0, 0%, 100%, 0.1);
       }
+
       &:after {
         right: 0;
         background: $main-color;
         animation: cv-channel-select 0.3s ease-in-out;
       }
+
       %channelContainerDefault & {
+
         %channelIcon,
         %channelName {
           color: var(--channel-text-selected);
         }
+
         %channelIconLive {
           color: var(--channel-text-selected) !important;
         }
       }
+
       %channelActionIcon {
         opacity: 0.7;
+
         &:hover {
           opacity: 1;
         }
       }
     }
+
     %textExtraSmallMedium,
     %textExtraSmallNormal {
       color: #fff !important;
@@ -209,6 +248,7 @@
           color: $main-color;
           text-shadow: 0 0 3px;
         }
+
         %channelIcon {
           color: $main-color;
           filter: drop-shadow(0 0 3px);
@@ -216,23 +256,28 @@
       }
     }
   }
+
   // MUTED
   &%channelWrapperMuted {
     %channelLink {
       %channelLinkTop {
+
         %channelIcon,
         %channelName {
           color: var(--muted-color);
         }
       }
     }
+
     &:hover {
       %channelLink {
         %channelLinkTop {
           &:before {
             background: hsla(0, 0%, 100%, 0.07);
           }
+
           %channelContainerDefault & {
+
             %channelIcon,
             %channelName {
               color: var(--channel-color);
@@ -263,18 +308,22 @@
   text-align: right;
   transition: all 0.15s ease-in-out;
 }
+
 %channelUserLimitUsers {
   padding: 0 4px 0 6px;
   background: rgba(0, 0, 0, 0.15);
 }
+
 %channelUserLimitTotal {
   padding: 0 6px 0 4px;
   background: hsla(0, 0%, 100%, 0.04);
   box-shadow: inset 1px 0 hsla(0, 0%, 100%, 0.07);
+
   &:after {
     display: none;
   }
 }
+
 %channelWrapperConnected {
   %channelUserLimitUsers {
     color: $main-color;
@@ -285,6 +334,7 @@
 // VOICE USER LIST
 %voiceUserList {
   padding-left: 24px;
+
   %voiceUserClickable:hover %voiceUserContent {
     background: rgba(0, 0, 0, 0.04);
   }
@@ -292,10 +342,12 @@
 
 %voiceUser {
   z-index: 1;
+
   %voiceUserContent {
     border-radius: 3px;
     transition: all 0.15s ease-in-out;
   }
+
   &:hover,
   &:active,
   &%voiceUserSelected {
@@ -303,14 +355,17 @@
       %voiceUserContent {
         background: hsla(0, 0%, 100%, 0.04);
       }
+
       %voiceUserName {
         color: hsla(0, 0%, 100%, 0.7);
       }
     }
   }
+
   %voiceUserAvatarSpeaking {
     position: relative;
     transition: all 0.1s ease-in-out;
+
     &:after {
       content: '';
       position: absolute;
@@ -325,23 +380,29 @@
       border-bottom-right-radius: 0;
     }
   }
+
   %voiceUserAvatarSpeaking {
     box-shadow: 0 0 0 2px $main-color, inset 0 0 3px rgba(0, 0, 0, 0.5);
+
     &:after {
       @include pos($top: -2px, $bottom: -2px);
       width: 150px;
     }
   }
+
   %voiceUserName {
     color: hsla(0, 0%, 100%, 0.5);
     transition: all 0.1s ease-in-out;
   }
+
   %voiceUserNameSpeaking {
     color: #fff !important;
   }
 }
+
 %voiceChannelsButton {
   border: 1px solid $main-color;
+
   &:hover {
     background: $hover-color;
     border: 1px solid $hover-color;
@@ -356,6 +417,7 @@
   margin-right: 3px;
   color: hsla(0, 0%, 100%, 0.3);
 }
+
 %userSummaryMoreUsers {
   padding: 0 4px;
   background: rgba(0, 0, 0, 0.3);
@@ -365,12 +427,14 @@
 // DRAG INDICATORS
 %categoryContainerDrag,
 %channelContainerDrag {
+
   &:before,
   &:after {
     background: $main-color;
     border-radius: 0;
   }
 }
+
 %channelContainerUserOver {
   &:after {
     background: $main-color;

@@ -7,22 +7,26 @@
 
 %panels {
   background: transparent;
+
   > :first-child {
     box-shadow: 0 -2px 10px rgba(0, 0, 0, calc(#{functions.cv('bg.app.shading')} * 0.3));
   }
 }
+
 %themeDark %panel {
   background-color: transparent;
 }
 
 // ACCOUNT & CONNECTION PANELS
 %accountPanel {
-  > %flex {
+  >%flex {
     background: rgba(0, 0, 0, 0.3);
     border-radius: 15px;
+
     > :nth-child(n + 2) {
       position: relative;
       margin-left: -1px;
+
       &:before {
         content: '';
         position: absolute;
@@ -35,10 +39,12 @@
     }
   }
 }
+
 /* Account for account panel width scaling under
   new design */
 %themeDark %accountPanelAvatarWrapper {
   min-width: calc(var(--channels-width) - 120px);
+
   &:hover {
     background-color: hsla(0, 0%, 100%, .1);
   }
@@ -49,42 +55,52 @@ button%panelButton {
   width: 32px;
   height: 32px;
   opacity: 1;
-  > %buttonContents > svg {
+
+  >%buttonContents>svg {
     @include bg($rep: no-repeat, $pos: center, $size: 18px);
     color: #fff;
     opacity: 0.5;
     transition: all 0.1s ease-in-out;
-    > path[fill*='var(--interactive-normal)'] {
+
+    >path[fill*='var(--interactive-normal)'] {
       fill: #fff;
     }
   }
+
   &:hover {
     &%panelButtonEnabled {
       background: transparent;
     }
-    > %buttonContents > svg {
+
+    >%buttonContents>svg {
       opacity: 0.7;
     }
   }
+
   &%panelButtonDisabled {
-    > %buttonContents > svg {
+    >%buttonContents>svg {
       opacity: 0.1;
     }
   }
 }
+
 %panelActionButtons {
   grid-gap: 6px;
 }
+
 %panelActionButton {
   &%panelActionButtonColor {
     padding: 0;
+
     &%panelActionButtonActive {
       background-color: #fff;
       color: $main-color;
+
       &:hover {
         background: hsla(0, 0%, 100%, 0.95);
         color: $hover-color;
       }
+
       %panelActionButtonLottieIcon {
         --__lottieIconColor: var(--main-color) !important;
       }
@@ -96,21 +112,25 @@ button%panelButton {
 %themeDark %accountPanel {
   position: relative;
   background: transparent;
+
   // SOME POSITIONING
   %accountPanelTagButton,
   %accountPanelTagless {
     min-width: calc(100% - 100px);
     width: auto;
+
     &:hover {
       background-color: hsla(0, 0%, 0%, 0.3);
       color: #fff;
     }
   }
+
   // AVATAR
   %accountPanelAvatar {
     width: 32px !important;
     height: 32px !important;
     transition: all 0.15s ease-in-out;
+
     &:after {
       content: 'Status';
       position: absolute;
@@ -125,20 +145,25 @@ button%panelButton {
       transition: all 0.15s ease-in-out;
       pointer-events: none;
     }
+
     foreignObject {
       transition: all 0.15s ease-in-out;
     }
+
     &:hover {
       opacity: 1;
+
       &:after {
         font-size: 10px;
         opacity: 1;
       }
+
       foreignObject {
         opacity: 0.5;
       }
     }
   }
+
   // NAME TAG
   %accountPanelUsername {
     color: #fff;
@@ -147,13 +172,15 @@ button%panelButton {
 
 // CONNECTION PANEL
 %connectionPanel {
-  > %flex {
+  >%flex {
     background: rgba(0, 0, 0, 0.3);
     border-radius: 5px;
     padding: 5px;
   }
+
   border-color: transparent;
   background: transparent;
+
   %connectionPanelInner {
     %rtcConnectionStatus {
       %rtcConnectionPing {
@@ -164,10 +191,12 @@ button%panelButton {
       }
     }
   }
+
   %connectionPanelChannel {
     color: hsla(0, 0%, 100%, 0.3);
     opacity: 1;
     transition: all 0.15s ease-in-out;
+
     &:hover {
       color: hsla(0, 0%, 100%, 0.5);
       text-decoration: none;
@@ -178,12 +207,15 @@ button%panelButton {
 // ACTIVITY PANEL
 %activityPanel {
   border-color: transparent;
+
   %activityPanelActions {
     background: rgba(0, 0, 0, 0.3);
     border-radius: 15px;
+
     > :nth-child(n + 2) {
       position: relative;
       margin-left: -1px;
+
       &:before {
         content: '';
         position: absolute;
@@ -209,17 +241,21 @@ button%panelButton {
 
 // QUEST PANEL
 %themeDark %questPanel {
-	background-color: transparent;
+  background-color: transparent;
 }
+
 %questPanelAccepted {
-	background: rgba(0, 0, 0, 0.6) !important;
+  background: rgba(0, 0, 0, 0.6) !important;
 }
+
 %questPanelAcceptedExpandedBackground {
-	background: transparent !important;
-	border-top: 2px solid hsla(0, 0%, 100%, .1);
+  background: transparent !important;
+  border-top: 2px solid hsla(0, 0%, 100%, .1);
 }
+
 %questPanelAcceptedExpandedContent {
   visibility: hidden;
+
   %questPanelExpanded & {
     visibility: visible;
   }
@@ -227,7 +263,8 @@ button%panelButton {
 
 // SPOTIFY/YT MUSIC MAYBE?/IDK
 %listeningAlongPanel {
-	background: transparent;
+  background: transparent;
+
   %panelTitle {
     color: $main-color;
   }

@@ -5,7 +5,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "pnpm build:catppuccin_mocha && pnpm build:clear_vision && pnpm build:ultra",
+    "build": "bun run build:catppuccin_mocha && bun run build:clear_vision && bun run build:ultra",
     "build:catppuccin_mocha": "dt-scss build CatppuccinMocha",
     "build:clear_vision": "dt-scss build ClearVision",
     "build:ultra": "dt-scss build Ultra",
@@ -20,7 +20,7 @@
   },
   "dependencies": {
     "autoprefixer": "^10.4.20",
-    "dt-scss": "^0.1.3",
+    "dt-scss": "^0.1.4",
     "postcss": "^8.4.47",
     "sade": "^1.8.1",
     "sass": "^1.79.4"

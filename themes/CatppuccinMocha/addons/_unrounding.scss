@@ -6,7 +6,7 @@ $txt-3: var(--txt-3);
 $streaming-dot: var(--streaming-dot);
 $bg-0: var(--bg-0);
 
- /* Unrounding */
+/* Unrounding */
 ::-webkit-scrollbar-thumb,
 * {
   border-radius: 0 !important;
@@ -15,27 +15,28 @@ $bg-0: var(--bg-0);
 /* Hide round masks */
 [class^='listItem_'] {
   [class^='wrapper_'] {
-    > [class^='svg_'] > mask,
-    > mask > circle {
+
+    >[class^='svg_']>mask,
+    >mask>circle {
       display: none;
     }
   }
 }
 
 [class^='bannerSVGWrapper_'] {
-  > mask > circle {
+  >mask>circle {
     display: none;
   }
 }
 
 [class^='mask_'] {
-  > foreignObject {
+  >foreignObject {
     mask-image: none;
   }
-  
-  > rect,
-  > circle,
-  > svg {
+
+  >rect,
+  >circle,
+  >svg {
     display: none;
   }
 }

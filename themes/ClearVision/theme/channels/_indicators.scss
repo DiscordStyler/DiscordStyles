@@ -8,6 +8,7 @@
 %channelsMentionIndicator {
   position: relative;
   background: transparent;
+
   &:after {
     content: '';
     position: absolute;
@@ -18,6 +19,7 @@
     z-index: -1;
     transition: all 0.15s ease-in-out;
   }
+
   &:hover {
     &:after {
       opacity: 1;

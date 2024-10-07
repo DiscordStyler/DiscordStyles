@@ -10,6 +10,7 @@
   z-index: 999;
   background: transparent;
   transition: all 0.15s ease-in-out;
+
   &:before {
     content: '';
     position: absolute;
@@ -20,16 +21,19 @@
     z-index: -1;
     transition: all 0.15s ease-in-out;
   }
+
   &:hover,
   &:active {
     &:before {
       opacity: 1;
     }
   }
+
   &:active {
     padding-top: 0;
     transform: scale(0.99);
   }
+
   button,
   button:last-child {
     color: #fff;
@@ -43,16 +47,20 @@
   transition: all 0.15s ease-in-out;
   padding-bottom: 0px;
   max-height: 24px;
-  > button {
+
+  >button {
     color: hsla(0, 0%, 100%, 0.7);
     transition: inherit;
   }
+
   &:hover {
     background: $main-color;
-    > button {
+
+    >button {
       color: #fff;
     }
   }
+
   &:active {
     transform: scale(0.99);
   }
@@ -67,10 +75,12 @@
     box-shadow: none;
     color: hsla(0, 0%, 100%, 0.7);
     transition: all 0.15s ease-in-out;
+
     &:hover {
       background: $main-color;
       color: #fff;
     }
+
     &:active {
       transform: scale(0.99);
     }
@@ -88,7 +98,8 @@
 // BRAND
 %barBrand {
   background-color: $main-color;
-  > * {
+
+  >* {
     color: #fff !important;
   }
 }
