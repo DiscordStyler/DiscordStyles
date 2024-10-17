@@ -1,0 +1,22 @@
+.vc-ranb-button .contents_dd4f85 {
+  visibility: hidden;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &::before {
+    content: "\fa48  Read";
+    font-family: var(--font), "gg sans", "tabler-icons";
+    visibility: visible;
+    font-style: normal;
+    font-weight: 600;
+    position: absolute;
+    left: 50% !important;
+    transform: translateX(-50%);
+  }
+
+  &:hover::before {
+    color: var(--brand-experiment) !important;
+  }
+}

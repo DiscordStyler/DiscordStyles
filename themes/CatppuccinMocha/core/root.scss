@@ -2,6 +2,9 @@
 
 /* Optional */
 @import url('https://discordstyler.github.io/DiscordStyles/CatppuccinMocha/Unrounding.css');
+@import url('https://discordstyler.github.io/DiscordStyles/CatppuccinMocha/TUI.css');
+@import url('https://discordstyler.github.io/DiscordStyles/CatppuccinMocha/ReadAll.css');
+@import url('https://discordstyler.github.io/DiscordStyles/CatppuccinMocha/LowWidth.css');
 
 .theme-dark {
   @include theme.highlights("mocha", "hex");

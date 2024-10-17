@@ -16,6 +16,9 @@ export default {
   },
   baseImport: 'https://discordstyler.github.io/DiscordStyles/CatppuccinMocha/CatppuccinMocha.css',
   addons: [
-    ['themes/CatppuccinMocha/addons/_unrounding.scss', 'dist/CatppuccinMocha/Unrounding.css'],
-  ]
+		['themes/CatppuccinMocha/addons/_unrounding.scss', 'dist/CatppuccinMocha/Unrounding.css'],
+		['themes/CatppuccinMocha/addons/_tui.scss', 'dist/CatppuccinMocha/TUI.css'],
+		['themes/CatppuccinMocha/addons/_low-width.scss', 'dist/CatppuccinMocha/LowWidth.css'],
+		['themes/CatppuccinMocha/addons/_read-all.scss', 'dist/CatppuccinMocha/ReadAll.css'],
+	]
 };
