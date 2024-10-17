@@ -2,6 +2,7 @@ export default {
   meta: {
     name: 'ClearVision',
     author: 'jw0902',
+    authorId: '780493281552760862', 
     version: '1.0.0',
     description: 'My cool theme',
     source: 'https://github.com/DiscordStyler/DiscordStyles',

@@ -2,6 +2,7 @@ export default {
   meta: {
     name: 'Catppuccin Mocha',
     author: 'jw0902',
+    authorId: '780493281552760862',
     version: '0.1.0',
     description: '🎮 Soothing pastel theme for Discord',
     source: 'https://github.com/DiscordStyler/DiscordStyles',
