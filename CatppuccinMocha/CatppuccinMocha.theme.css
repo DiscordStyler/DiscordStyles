@@ -10,6 +10,9 @@
 
 /* Optional */
 @import url("https://discordstyler.github.io/DiscordStyles/CatppuccinMocha/Unrounding.css");
+@import url("https://discordstyler.github.io/DiscordStyles/CatppuccinMocha/TUI.css");
+@import url("https://discordstyler.github.io/DiscordStyles/CatppuccinMocha/ReadAll.css");
+@import url("https://discordstyler.github.io/DiscordStyles/CatppuccinMocha/LowWidth.css");
 /* https://highlightjs.readthedocs.io/en/latest/css-classes-reference.html */
 .theme-dark .hljs-emphasis {
   font-style: italic;
