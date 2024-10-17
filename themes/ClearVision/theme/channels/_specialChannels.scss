@@ -3,49 +3,40 @@
 @use '../variables' as *;
 @use '../mixins' as *;
 
-
 %customizeChannelsHeader {
-  background-color: rgba(0, 0, 0, calc(var(--background-shading) * 0.6)) !important;
+  background-color: rgba(0, 0, 0, calc($bg-shading * 0.6)) !important;
 }
-
 %customizeChannels {
-  background-color: rgba(0, 0, 0, calc(var(--background-shading) * 0.5)) !important;
+  background-color: rgba(0, 0, 0, calc($bg-shading * 0.5)) !important;
 }
 
 /*header*/
 %customizeChannelsHeaderBar {
   border-bottom: none;
 }
-
 /*main section*/
 %customizeChannelsPrompt {
   background: var(--background-overlay);
 }
-
 %customizeChannelsPill {
   background: rgba(0, 0, 0, 0.2);
   border: 1px solid $main-color;
 }
-
 /*option buttons*/
 %customizeChannelsOption {
   border: 2px solid $main-color;
-
   &:hover {
     border: 2px solid $hover-color;
   }
-
   &%customizeChannelsSelected {
     border: 2px solid var(--success-color);
     background: rgba(0, 0, 0, 0.2);
   }
 }
-
 /*profile card*/
 %customizeChannelsProfile {
   background: var(--background-overlay);
 }
-
 %customizeChannelsProfileRole {
   background: rgba(0, 0, 0, 0.2);
 }
@@ -54,7 +45,6 @@
 %browseChannels {
   background-color: transparent;
 }
-
 %browseChannelsTip {
   background-color: rgba(0, 0, 0, 0.4);
 }
@@ -67,15 +57,13 @@
 }
 
 %browseChannelsRow {
-  background-color: rgba(0, 0, 0, calc(var(--background-shading) * 0.4));
-
+  background-color: rgba(0, 0, 0, calc($bg-shading * 0.4));
   &:hover {
     &:not(%browseChannelsDisabled) {
-      background-color: rgba(0, 0, 0, calc(var(--background-shading) * 0.6));
+      background-color: rgba(0, 0, 0, calc($bg-shading * 0.6));
     }
   }
 }
-
 // MEMBERS LIST
 /*main container*/
 %membersChannelContainer {
@@ -83,38 +71,31 @@
   border: 1px solid $main-color;
   box-shadow: none;
 }
-
 /*table border*/
 %membersChannelTable {
   border-top: 1px solid $main-color;
 }
-
 /*user hover*/
 %membersChannelRowContainer:hover td {
   background: $hover-color;
 }
-
 /*user option buttons*/
 %membersChannelButton {
   background: $main-color;
-
   &:hover {
     background: $hover-color;
   }
-
-  &:nth-child(2) path~path,
+  &:nth-child(2) path ~ path,
   &:nth-child(1) path {
     fill: #fff;
   }
 }
-
 /*roles*/
 %membersChannelRoleList {
   background: var(--background-overlay);
 }
-
 /*hover page button*/
-%membersChannelPage>span {
+%membersChannelPage > span {
   color: #fff;
 }
 
@@ -122,32 +103,26 @@
 %channelNotInList {
   background: transparent;
 }
-
 /* SERVER GUIDE */
 %homeContainer {
-
   /*First msg*/
   %serverGuideMessage {
     background: transparent;
   }
-
   %serverGuideMessageInner,
   %serverGuideAvatar,
   %serverGuideAction,
   %serverGuideSidebarCard,
   %serverGuideRow {
-    background: rgba(0, 0, 0, calc(var(--background-shading) * 0.4));
+    background: rgba(0, 0, 0, calc($bg-shading * 0.4));
   }
-
   %serverGuideAction:hover {
     background: $hover-color;
   }
-
   %serverGuideIcon {
     background: $main-color;
     border: 4px solid transparent;
   }
-
   %guildFolderIcon {
     position: relative;
     background-clip: padding-box;
@@ -155,54 +130,43 @@
     background-position: center center;
     background-size: 100%100%;
   }
-
   %serverGuideChannelIcon,
   %serverGuideRulesIcon {
     background: $main-color;
-
-    &>svg>path {
+    & > svg > path {
       fill: #fff;
     }
   }
-
-  %serverGuideActionCompleted>path {
+  %serverGuideActionCompleted > path {
     fill: var(--success-color);
   }
 }
-
 /*Cases where we get taken to channels*/
 %serverGuideChannelHintBanner {
-  background: rgba(0, 0, 0, calc(var(--background-shading) * 0.4));
+  background: rgba(0, 0, 0, calc($bg-shading * 0.4));
 }
-
 %serverGuideChannelHintIcon {
   background: $main-color;
 }
-
 /* SERVER SUBSCRIPTIONS */
 %serverSubscription {
   background: var(--background-overlay);
 }
-
 %serverSubscriptionTier {
   background: rgba(0, 0, 0, 0.4);
 }
-
 %serverSubscriptionPerk,
 %serverSubscriptionPreview {
   background: rgba(0, 0, 0, 0.2);
 }
-
 /* CUSTOMIZE YOUR EXPERIENCE */
 %serverExperienceNav {
   background: rgba(0, 0, 0, 0.4);
 }
-
 %serverExperiencePrompt,
 %serverExperienceTerms {
   background: rgba(0, 0, 0, 0.3);
 }
-
 %serverExperienceGradient {
   display: none;
 }
