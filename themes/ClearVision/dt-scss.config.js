@@ -7,11 +7,11 @@ export default {
     source: 'https://github.com/DiscordStyler/DiscordStyles',
   },
   base: {
-    target: "themes/ClearVision/base.scss",
+    target: "base.scss",
     output: 'dist/ClearVision'
   },
   dist: {
-    target: "themes/ClearVision/dist.scss",
+    target: "dist.scss",
     output: "dist/ClearVision",
   },
   baseImport: 'https://discordstyler.github.io/DiscordStyles/ClearVision/ClearVision.css',
