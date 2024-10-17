@@ -20,7 +20,7 @@
   },
   "dependencies": {
     "autoprefixer": "^10.4.20",
-    "dt-scss": "^0.1.6",
+    "dt-scss": "^0.1.7",
     "postcss": "^8.4.47",
     "sade": "^1.8.1",
     "sass": "^1.79.4"
