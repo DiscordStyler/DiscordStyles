@@ -13,37 +13,30 @@ $bg-0: var(--bg-0);
 }
 
 /* Hide round masks */
-[class^='listItem_'] {
-  [class^='wrapper_'] {
-
-    >[class^='svg_']>mask,
-    >mask>circle {
-      display: none;
-    }
-  }
+[class^='listItem_'] [class^='wrapper_'] > [class^='svg_'] > mask,
+[class^='bannerSVGWrapper_'] > mask > circle {
+	display: none;
 }
 
-[class^='bannerSVGWrapper_'] {
-  >mask>circle {
-    display: none;
-  }
+[class^='mask_'] > foreignObject,
+[class^='svg_'] > foreignObject {
+	mask-image: none;
 }
 
-[class^='mask_'] {
-  >foreignObject {
-    mask-image: none;
-  }
+.overlay__75742:after,
+.overlay_c0bea0:after {
+	border-radius: 0;
+}
 
-  >rect,
-  >circle,
-  >svg {
-    display: none;
-  }
+/* hide status indicators */
+[class^='mask_'] > rect,
+[class^='mask_'] > circle,
+[class^='mask_'] > svg {
+	display: none;
 }
 
 /* Re-add status indicators */
-.wrapper_c51b4e:has(rect)::after,
-.container_e85446:has(div[style='background-color: rgb(35, 165, 90);'])::after {
+.wrapper__44b0c:has(rect)::after {
   content: '';
   display: block;
   position: absolute;
@@ -51,30 +44,26 @@ $bg-0: var(--bg-0);
   width: 8px;
   bottom: -4px;
   right: -4px;
+  border: 2px solid $bg-0; 
 }
 
-.wrapper_c51b4e:has(rect[fill='#23a55a'])::after,
-.container_e85446:has(div[style='background-color: rgb(35, 165, 90);'])::after,
-[class^='status_'][style='background-color: rgb(35, 165, 90);'] {
+.wrapper__44b0c:has(rect[fill='#23a55a'])::after {
   background: $online-dot !important;
 }
 
-.wrapper_c51b4e:has(rect[fill='#f23f43'])::after,
-[class^='status_'][style='background-color: rgb(242, 63, 67);'] {
+.wrapper__44b0c:has(rect[fill='#f23f43'])::after {
   background: $dnd-dot !important;
 }
 
-.wrapper_c51b4e:has(rect[fill='#f0b232'])::after,
-[class^='status_'][style='background-color: rgb(240, 178, 50);'] {
+.wrapper__44b0c:has(rect[fill='#f0b232'])::after {
   background: $idle-dot !important;
 }
 
-.wrapper_c51b4e:has(rect[fill='#80848e'])::after,
-[class^='status_'][style='background-color: rgb(128, 132, 142);'] {
+.wrapper__44b0c:has(rect[fill='#80848e']) {
   background: $txt-3 !important;
 }
 
-.wrapper_c51b4e:has(rect[fill='#593695'])::after {
+.wrapper__44b0c:has(rect[fill='#593695'])::after {
   background: $streaming-dot;
 }
 
